@@ -52,10 +52,36 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Ad0-lq-qeI">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="34V-fe-Slc" customClass="ProfileViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JcS-av-78F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-dv-6Ic">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-r7-9MD">
+                                <rect key="frame" x="40" y="119" width="294" height="328"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Gob-ot-zDM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCL-Bx-q9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1424.8" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
         <image name="ryan" width="449" height="514"/>
     </resources>
 </document>
