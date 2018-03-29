@@ -12,7 +12,7 @@ class CardsViewController: UIViewController {
     var cardInitialCenter: CGPoint!
     
     @IBOutlet weak var profileImage: UIImageView!
-    
+    var rotaion = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +30,32 @@ class CardsViewController: UIViewController {
         print("translation \(translation)")
         let velocity = sender.velocity(in: view)
         
+
         if sender.state == .began {
             cardInitialCenter = profileImage.center
             
         } else if sender.state == .changed {
-            profileImage.center = CGPoint(x: cardInitialCenter.x, y: cardInitialCenter.y + translation.y)
+            if(translation.x > 0)
+            {
+                self.rotaion += 0.3
+                profileImage.transform = CGAffineTransform(rotationAngle: CGFloat(self.rotaion * M_PI / 180))
+
+            }
+            else {
+                self.rotaion += 0.3
+
+                var negative = -1.0 * self.rotaion
+                profileImage.transform = CGAffineTransform(rotationAngle: CGFloat(negative * M_PI / 180))
+
+            }
+            profileImage.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y + translation.y)
+
             
         } else if sender.state == .ended {
-            
+            self.rotaion = 0
+             profileImage.center = cardInitialCenter
+            profileImage.transform = CGAffineTransform(rotationAngle: CGFloat(0 * M_PI / 180))
+
         }
         
     }
