@@ -37,13 +37,26 @@ class CardsViewController: UIViewController {
         } else if sender.state == .changed {
             if(translation.x > 0)
             {
-                self.rotaion += 0.3
+                if(location.y > cardInitialCenter.y){
+                    self.rotaion -= 0.3
+
+                }
+                else {
+                    self.rotaion += 0.3
+
+                }
                 profileImage.transform = CGAffineTransform(rotationAngle: CGFloat(self.rotaion * M_PI / 180))
 
             }
             else {
-                self.rotaion += 0.3
+                if(location.y < cardInitialCenter.y){
+                    self.rotaion += 0.3
 
+                }
+                else {
+                    self.rotaion -= 0.3
+
+                }
                 var negative = -1.0 * self.rotaion
                 profileImage.transform = CGAffineTransform(rotationAngle: CGFloat(negative * M_PI / 180))
 
