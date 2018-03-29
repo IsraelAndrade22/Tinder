@@ -9,7 +9,11 @@
 import UIKit
 
 class CardsViewController: UIViewController {
-
+    var cardInitialCenter: CGPoint!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +23,23 @@ class CardsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func didDragCard(_ sender: UIPanGestureRecognizer) {
+        let location = sender.location(in: view)
+        let translation = sender.translation(in: view)
+        print("translation \(translation)")
+        let velocity = sender.velocity(in: view)
+        
+        if sender.state == .began {
+            cardInitialCenter = profileImage.center
+            
+        } else if sender.state == .changed {
+            profileImage.center = CGPoint(x: cardInitialCenter.x, y: cardInitialCenter.y + translation.y)
+            
+        } else if sender.state == .ended {
+            
+        }
+        
     }
     
 
