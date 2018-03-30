@@ -32,6 +32,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="QEl-1o-vS3" appends="YES" id="2zX-Yb-jjE"/>
+                                    <outletCollection property="gestureRecognizers" destination="K06-Ii-z66" appends="YES" id="K9a-hM-VcQ"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -41,6 +42,7 @@
                     <navigationItem key="navigationItem" id="dp3-rz-mby"/>
                     <connections>
                         <outlet property="profileImage" destination="eEf-yb-05r" id="eCc-EB-fdz"/>
+                        <segue destination="34V-fe-Slc" kind="presentation" identifier="profileSegue" id="KKG-8a-oW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -49,6 +51,11 @@
                         <action selector="didDragCard:" destination="BYZ-38-t0r" id="03C-Ir-gDi"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="K06-Ii-z66">
+                    <connections>
+                        <action selector="didTapPicture:" destination="BYZ-38-t0r" id="ztB-gY-vkN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
@@ -67,11 +74,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-r7-9MD">
                                 <rect key="frame" x="40" y="119" width="294" height="328"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Gob-ot-zDM"/>
                     </view>
+                    <connections>
+                        <outlet property="profilePicture" destination="nnf-r7-9MD" id="3Km-YF-IyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCL-Bx-q9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

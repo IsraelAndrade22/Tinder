@@ -92,7 +92,10 @@ class CardsViewController: UIViewController {
         
     }
     
-
+    @IBAction func didTapPicture(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
